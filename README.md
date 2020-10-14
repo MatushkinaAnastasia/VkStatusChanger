@@ -1,0 +1,2 @@
+# VkStatusChanger
+App for VK
