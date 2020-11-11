@@ -1,0 +1,85 @@
+﻿<Window x:Class="Vk_App.VkStatus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vk_App"
+        mc:Ignorable="d"
+        Title="Статус-чейнджер в ВК" Height="454.438" Width="486.527">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="241*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="143*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" 
+                   Fill="Blue" Grid.ColumnSpan="3" />
+        <Label Grid.Row="0"
+                Content="Создай свой уникальный статус!" 
+                HorizontalAlignment="Center" 
+                FontSize="20"
+                Foreground="White"
+                Grid.ColumnSpan="3" Width="322"
+               />
+        <Grid Grid.Row="1" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="34"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0"
+                    Content="Добро пожаловать, Пользователь!" 
+                    Name="welcomuser"
+                       Margin="10"/>
+                <GroupBox Grid.Row="1"
+                    Header="Статус" 
+                    VerticalAlignment="Center">
+                    <TextBox x:Name="status_text"
+                         Height="140" 
+                         TextWrapping="Wrap" 
+                         Text=""/>
+                </GroupBox>
+                <Button Grid.Row="2"
+                    Content="Выйти из аккаунта"
+                    Click="outFromAcc"/>
+            </Grid>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="47"/>
+                </Grid.RowDefinitions>
+                <GroupBox Grid.Row="1"
+                    Header="Создать новый статус"
+                       VerticalAlignment="Center" 
+                          Height="163" 
+                          Margin="0,62,0,48">
+                    <StackPanel>
+                        <Button 
+                        Content="Создать новый статус" 
+                        Click="NewStatus"/>
+                        <Button 
+                        Content="Проверить статус" 
+                        Click="GetStatus" 
+                        Name="get"/>
+                        <Button 
+                        Content="Сделать магию статуса" 
+                        Click="magicStatus" />
+                        <Button 
+                        Content="Удалить статус" 
+                        Click="DeleteStatus"/>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
